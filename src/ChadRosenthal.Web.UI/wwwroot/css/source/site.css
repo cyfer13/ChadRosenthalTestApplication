@@ -1,0 +1,20 @@
+body {
+  background-color: #336666;
+  color: black;
+}
+.baseColor {
+  color: #663333;
+  font-size: 12px;
+}
+.bgLight {
+  color: #884a44;
+}
+.bgLight2 {
+  color: #aa6355;
+}
+.bgDark {
+  color: #442225;
+}
+.bgDark2 {
+  color: #221114;
+}
