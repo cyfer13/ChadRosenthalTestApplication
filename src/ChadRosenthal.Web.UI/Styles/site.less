@@ -1,33 +1,83 @@
-﻿@base: #663333;
-@background: spin(@base, 180);
-@lighter: lighten(spin(@base, 5), 10%);
-@lighter2: lighten(spin(@base, 10), 20%);
-@darker: darken(spin(@base, -5), 10%);
-@darker2: darken(spin(@base, -10), 20%);
+﻿@import 'reset';
+
+html {
+    font-size: 62.5%;
+    line-height: 1.25;
+    font-family: 'Karla', sans-serif;
+    color: #333333;
+}
 
 body {
-    background-color: @background;
+    display: grid;
+    grid-template-areas: "header header" "nav nav" "aside main" "footer footer";
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 150px 50px 1fr 90px;
+
+    > header {
+        grid-area: header;
+    }
+
+    > nav {
+        grid-area: nav;
+    }
+
+    > aside {
+        grid-area: aside;
+    }
+
+    > main {
+        grid-area: main;
+    }
+
+    > footer {
+        grid-area: footer;
+    }
+}
+
+
+h1 {
+    font-size: 3em;
+    margin: 1em 0;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+p, li, blockquote {
+    font-size: 1.6em;
+}
+
+
+p {
     color: black;
 }
 
+nav {
+    > ul {
+        > li {
+            display: inline;
+            margin-right: 1em;
 
-.baseColor {
-    color: @base;
-    font-size: 12px;
-}
+            &:last-child {
+                margin-right: 0;
+            }
 
-.bgLight {
-    color: @lighter;
-}
+            a {
+                color: #ff0000;
+                &:visited {
+                    color: #ff0000;
+                }
 
-.bgLight2 {
-    color: @lighter2;
-}
+                &:hover {
+                    color: #ffcc00;
+                }
+            }
 
-.bgDark {
-    color: @darker;
-}
-
-.bgDark2 {
-    color: @darker2;
+        }
+    }
 }

@@ -23,7 +23,7 @@ var gulp = require('gulp'),
 var tsProject;
 
 gulp.task('less', function () {
-    return gulp.src(lessFiles)
+    return gulp.src('styles/**/site.less')
         .pipe(lesshint({
 
         }))

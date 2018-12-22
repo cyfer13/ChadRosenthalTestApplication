@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+    var title = ViewBag?.Title != null ? ViewBag.Title + " | Chad Rosenthal" : "Chad Rosenthal";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@title</title>
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <environment names="Development">
+        <link rel="stylesheet" href="~/css/source/site.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="~/css/minified/bundled.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <header>
+        <h1>Header</h1>
+        <h2>Secondary Header</h2>
+    </header>
+    <nav>
+        <ul>
+            <li><a asp-controller="home" asp-action="index">Home</a></li>
+            <li><a asp-controller="news" asp-action="index">News</a></li>
+        </ul>
+    </nav>
+
+    <aside>
+        Aside
+    </aside>
+    <main>
+        @RenderBody()
+
+    </main>
+    <footer>Footer</footer>
+</body>
+</html>
