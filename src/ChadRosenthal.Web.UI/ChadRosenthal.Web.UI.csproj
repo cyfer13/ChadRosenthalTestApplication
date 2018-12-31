@@ -24,6 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ChadRosenthal.Application.Services\ChadRosenthal.Application.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <TypeScriptCompile Include="Scripts\main.ts" />
   </ItemGroup>
 

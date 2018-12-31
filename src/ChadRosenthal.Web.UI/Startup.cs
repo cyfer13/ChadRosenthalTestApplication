@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using ChadRosenthal.Application.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,6 +15,8 @@ namespace ChadRosenthal.Web.UI
             {
                 options.AllowAreas = true;
             });
+
+            services.AddScoped<ITestInterface, TestInterface>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -22,6 +25,10 @@ namespace ChadRosenthal.Web.UI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
             }
 
             app.UseDefaultFiles();
