@@ -1,9 +1,10 @@
-﻿@page
-@model ChadRosenthal.Web.UI.Pages.newsModel
+﻿@page "{id:int?}"
+@model ChadRosenthal.Web.UI.Pages.NewsModel
 @{
     ViewData["Title"] = "news";
     Layout = "~/Pages/Shared/_masterLayout.cshtml";
 }
 
 <h1>news</h1>
+<h2>Message = @Model.NewsMessage</h2>
 

@@ -7,11 +7,20 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace ChadRosenthal.Web.UI.Pages
 {
-    public class newsModel : PageModel
+    public class NewsModel : PageModel
     {
-        public void OnGet()
-        {
+        public string NewsMessage { get; private set; }
 
+        public void OnGet(int? id)
+        {
+            if (id == null)
+            {
+                NewsMessage = "no id";
+            }
+            else
+            {
+                NewsMessage = id.Value.ToString();
+            }
         }
     }
 }
