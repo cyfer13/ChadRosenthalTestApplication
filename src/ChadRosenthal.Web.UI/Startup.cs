@@ -1,4 +1,6 @@
-﻿using ChadRosenthal.Application.Services;
+﻿using ChadRosenthal.Application.Repository.Static;
+using ChadRosenthal.Application.Services;
+using ChadRosenthal.Application.Services.Interfaces.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,7 +18,8 @@ namespace ChadRosenthal.Web.UI
                 options.AllowAreas = true;
             });
 
-            services.AddScoped<ITestInterface, TestInterface>();
+            services.AddScoped<INewsService, NewsService>();
+            services.AddScoped<INewsArticleRepository, NewsArticleRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

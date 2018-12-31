@@ -133,43 +133,50 @@ html {
   color: #333333;
 }
 body {
+  background-color: gray;
+}
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  background-color: white;
   display: grid;
   grid-template-areas: "header header" "nav nav" "aside main" "footer footer";
   grid-template-columns: 150px 1fr;
   grid-template-rows: 150px 50px 1fr 90px;
 }
-body > header {
+.wrapper > header {
   grid-area: header;
 }
-body > nav {
+.wrapper > nav {
   grid-area: nav;
 }
-body > aside {
+.wrapper > aside {
   grid-area: aside;
 }
-body > main {
+.wrapper > main {
   grid-area: main;
 }
-body > footer {
+.wrapper > footer {
   grid-area: footer;
 }
 h1 {
   font-size: 3em;
+  padding-bottom: 0.5em;
   margin: 1em 0;
 }
 h2 {
   font-size: 2.5em;
+  padding-bottom: 0.5em;
 }
 h3 {
   font-size: 2em;
+  padding-bottom: 0.5em;
 }
 p,
 li,
 blockquote {
   font-size: 1.6em;
-}
-p {
-  color: black;
+  padding-bottom: 0.5em;
 }
 nav > ul > li {
   display: inline;

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ChadRosenthal.Application.Domain;
+using ChadRosenthal.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -9,17 +11,31 @@ namespace ChadRosenthal.Web.UI.Pages
 {
     public class NewsModel : PageModel
     {
-        public string NewsMessage { get; private set; }
+        private readonly INewsService _newsService;
 
-        public void OnGet(int? id)
+        public bool DisplaySingleArticle { get; private set; }
+
+        public IList<NewsArticle> Articles { get; private set; }
+
+        public NewsArticle SingleArticle { get; private set; }
+
+
+        public NewsModel(INewsService newsService)
         {
-            if (id == null)
+            this._newsService = newsService;
+        }
+
+        public void OnGet(string slug)
+        {
+            if (string.IsNullOrEmpty(slug))
             {
-                NewsMessage = "no id";
+                DisplaySingleArticle = false;
+                Articles = _newsService.GetAll().ToList();
             }
             else
             {
-                NewsMessage = id.Value.ToString();
+                DisplaySingleArticle = true;
+                SingleArticle = _newsService.Get(slug);
             }
         }
     }

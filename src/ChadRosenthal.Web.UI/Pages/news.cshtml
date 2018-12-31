@@ -1,10 +1,38 @@
-﻿@page "{id:int?}"
+﻿@page "/news/{slug?}"
 @model ChadRosenthal.Web.UI.Pages.NewsModel
 @{
     ViewData["Title"] = "news";
     Layout = "~/Pages/Shared/_masterLayout.cshtml";
 }
 
-<h1>news</h1>
-<h2>Message = @Model.NewsMessage</h2>
+@if (Model.DisplaySingleArticle && Model.SingleArticle != null)
+{
+    <a asp-page="./news" asp-route-slug=""> &lt;-- Back To List</a>
+
+    <article>
+        <header>
+            <h1>@Model.SingleArticle.Title</h1>
+            <h2>by @Model.SingleArticle.Author</h2>
+            <h3>Date Posted: @Model.SingleArticle.DatePosted</h3>
+            @Model.SingleArticle.Text
+        </header>
+    </article>
+}
+else if (Model.DisplaySingleArticle && Model.SingleArticle == null)
+{
+    <h1>The requested article cannot be found</h1>
+}
+else
+{
+    @foreach (var article in Model.Articles.OrderByDescending(x=>x.DatePosted))
+    {
+        <article>
+
+            <h2><a asp-page="./news" asp-route-slug="@article.Slug">@article.Title</a></h2>
+            <p>by @article.Author</p>
+            <p>Date Posted: @article.DatePosted.ToShortDateString()</p>
+            <p>@article.ShortDescription</p>
+        </article>
+    }
+}
 

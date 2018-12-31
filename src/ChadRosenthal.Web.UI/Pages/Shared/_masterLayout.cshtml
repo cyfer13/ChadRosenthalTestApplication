@@ -19,26 +19,28 @@
     </environment>
 </head>
 <body>
-    <header>
-        <h1>Header</h1>
-        <h2>Secondary Header</h2>
-    </header>
-    <nav>
-        <ul>
-            <li><a asp-page="./index">Home</a></li>
-            <li><a asp-page="./news">News</a></li>
-            <li><a asp-page="./about">About</a></li>
-            <li><a asp-page="./test123" asp-area="test">Area Test</a></li>
-        </ul>
-    </nav>
+    <div class="wrapper">
+        <header>
+            <h1>Header</h1>
+            <h2>Secondary Header</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a asp-page="./index">Home</a></li>
+                <li><a asp-page="./news" asp-route-slug="">News</a></li>
+                <li><a asp-page="./about">About</a></li>
+                <li><a asp-page="./test123" asp-area="test">Area Test</a></li>
+            </ul>
+        </nav>
 
-    <aside>
-        Aside
-    </aside>
-    <main>
-        @RenderBody()
+        <aside>
+            Aside
+        </aside>
+        <main>
+            @RenderBody()
 
-    </main>
-    <footer>Footer</footer>
+        </main>
+        <footer>Footer</footer>
+    </div>
 </body>
 </html>

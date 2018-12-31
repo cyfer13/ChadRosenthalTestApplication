@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChadRosenthal.Web.UI", "Cha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChadRosenthal.Application.Services", "ChadRosenthal.Application.Services\ChadRosenthal.Application.Services.csproj", "{AA04BB63-8DCA-49E1-9532-C3057FFC8FE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChadRosenthal.Application.Domain", "ChadRosenthal.Application.Domain\ChadRosenthal.Application.Domain.csproj", "{26412E28-20C8-4158-8DF1-9ABF4DA90D26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChadRosenthal.Application.Repository.Static", "ChadRosenthal.Application.Repository.Static\ChadRosenthal.Application.Repository.Static.csproj", "{82DDE6F8-C44A-46F9-8309-A6C8668DE6C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{AA04BB63-8DCA-49E1-9532-C3057FFC8FE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA04BB63-8DCA-49E1-9532-C3057FFC8FE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA04BB63-8DCA-49E1-9532-C3057FFC8FE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26412E28-20C8-4158-8DF1-9ABF4DA90D26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26412E28-20C8-4158-8DF1-9ABF4DA90D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26412E28-20C8-4158-8DF1-9ABF4DA90D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26412E28-20C8-4158-8DF1-9ABF4DA90D26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82DDE6F8-C44A-46F9-8309-A6C8668DE6C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82DDE6F8-C44A-46F9-8309-A6C8668DE6C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82DDE6F8-C44A-46F9-8309-A6C8668DE6C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82DDE6F8-C44A-46F9-8309-A6C8668DE6C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

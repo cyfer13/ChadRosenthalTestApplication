@@ -12,15 +12,9 @@ namespace ChadRosenthal.Web.UI.Pages
     {
         public string Message { get; private set; }
 
-        private readonly ITestInterface testInterface;
-
-        public IndexModel(ITestInterface testInterface)
-        {
-            this.testInterface = testInterface;
-        }
         public void OnGet()
         {
-            Message = testInterface.Add();
+            Message = "this is the message";
         }
     }
 }
