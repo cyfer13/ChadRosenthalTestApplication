@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using ChadRosenthal.Application.Repository.Static;
+using ChadRosenthal.Application.Repository.EFCore;
 using ChadRosenthal.Application.Services;
 using ChadRosenthal.Application.Services.Interfaces.Repository;
 using Microsoft.AspNetCore.Http;

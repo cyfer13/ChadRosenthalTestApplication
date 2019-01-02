@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ChadRosenthal.Application.Repository.EFCore\ChadRosenthal.Application.Repository.EFCore.csproj" />
     <ProjectReference Include="..\ChadRosenthal.Application.Repository.Static\ChadRosenthal.Application.Repository.Static.csproj" />
     <ProjectReference Include="..\ChadRosenthal.Application.Services\ChadRosenthal.Application.Services.csproj" />
   </ItemGroup>
