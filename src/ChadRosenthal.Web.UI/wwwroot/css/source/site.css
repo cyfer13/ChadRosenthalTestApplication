@@ -126,14 +126,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* Main Primary color */
 html {
   font-size: 62.5%;
   line-height: 1.25;
   font-family: 'Karla', sans-serif;
-  color: #333333;
 }
 body {
-  background-color: gray;
+  background-color: #ffffff;
+  border-top: 10px #1C053A solid;
 }
 .wrapper {
   margin: 0 auto;
@@ -142,27 +143,41 @@ body {
   display: grid;
   grid-template-areas: "header header" "nav nav" "aside main" "footer footer";
   grid-template-columns: 150px 1fr;
-  grid-template-rows: 150px 50px 1fr 90px;
+  grid-template-rows: auto auto 1fr auto;
 }
 .wrapper > header {
   grid-area: header;
+  background-color: #4B2D73;
+  color: #ffffff;
+  padding: 1em;
+}
+.wrapper > header h1 {
+  font-size: 3em;
+  line-height: 1em;
+  margin: 0;
+  padding: 0;
 }
 .wrapper > nav {
   grid-area: nav;
+  background-color: #8F78AD;
 }
 .wrapper > aside {
   grid-area: aside;
 }
 .wrapper > main {
   grid-area: main;
+  padding: 1em;
 }
 .wrapper > footer {
   grid-area: footer;
+  color: #ffffff;
+  background-color: #8F78AD;
+  padding: 1em;
 }
 h1 {
   font-size: 3em;
   padding-bottom: 0.5em;
-  margin: 1em 0;
+  margin: 0 0 1em;
 }
 h2 {
   font-size: 2.5em;
@@ -180,17 +195,34 @@ blockquote {
 }
 nav > ul > li {
   display: inline;
-  margin-right: 1em;
-}
-nav > ul > li:last-child {
-  margin-right: 0;
 }
 nav > ul > li a {
-  color: #ff0000;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 1.2em;
+  padding: 0.4em 0.4em;
+  margin: 0.2em 0 0.2em 0.2em;
+  background-color: #6B4E90;
+  text-decoration: none;
 }
 nav > ul > li a:visited {
-  color: #ff0000;
+  color: #ffffff;
+  background-color: #311557;
 }
 nav > ul > li a:hover {
-  color: #ffcc00;
+  color: #6B4E90;
+}
+nav > ul > li a.active {
+  color: #6B4E90;
+  background-color: #311557;
+}
+a {
+  color: #311557;
+}
+a:visited {
+  color: #311557;
+}
+a:hover {
+  color: #ffffff;
+  background-color: #311557;
 }

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ChadRosenthal.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
 
 namespace ChadRosenthal.Web.UI.Pages
 {
@@ -12,8 +13,16 @@ namespace ChadRosenthal.Web.UI.Pages
     {
         public string Message { get; private set; }
 
+        private readonly ILogger _logger;
+
+        public IndexModel(ILogger<IndexModel> logger)
+        {
+            _logger = logger;
+        }
+
         public void OnGet()
         {
+            _logger.LogError("index page loaded");
             Message = "this is the message";
         }
     }

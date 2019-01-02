@@ -21,15 +21,14 @@
 <body>
     <div class="wrapper">
         <header>
-            <h1>Header</h1>
-            <h2>Secondary Header</h2>
+            <h1>Chad Rosenthal Site</h1>
         </header>
         <nav>
             <ul>
-                <li><a asp-page="./index">Home</a></li>
-                <li><a asp-page="./news" asp-route-slug="">News</a></li>
-                <li><a asp-page="./about">About</a></li>
-                <li><a asp-page="./test123" asp-area="test">Area Test</a></li>
+                <li><a is-active-route asp-page="/index">Home</a></li>
+                <li><a is-active-route asp-page="/news" asp-route-slug="">News</a></li>
+                <li><a is-active-route asp-page="/about">About</a></li>
+                <li><a is-active-route asp-page="/test123" asp-area="test">Area Test</a></li>
             </ul>
         </nav>
 

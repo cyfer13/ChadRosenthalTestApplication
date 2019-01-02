@@ -1,33 +1,43 @@
 ﻿@import 'reset';
+@import 'variables';
 
 html {
     font-size: 62.5%;
     line-height: 1.25;
-    font-family: 'Karla', sans-serif;
-    color: #333333;
+    font-family: @font-family;
 }
 
 body {
-    background-color: gray;
+    background-color: @default-color;
+    border-top: 10px @darkest-color solid;
 }
 
 .wrapper {
     margin: 0 auto;
     max-width: 1200px;
     background-color: white;
-
-
     display: grid;
     grid-template-areas: "header header" "nav nav" "aside main" "footer footer";
     grid-template-columns: 150px 1fr;
-    grid-template-rows: 150px 50px 1fr 90px;
+    grid-template-rows: auto auto 1fr auto;
 
     > header {
         grid-area: header;
+        background-color: @main-color;
+        color: @default-color;
+        padding: 1em;
+
+        h1 {
+            font-size: 3em;
+            line-height: 1em;
+            margin: 0;
+            padding: 0;
+        }
     }
 
     > nav {
         grid-area: nav;
+        background-color: @lightest-color;
     }
 
     > aside {
@@ -36,10 +46,14 @@ body {
 
     > main {
         grid-area: main;
+        padding: 1em;
     }
 
     > footer {
         grid-area: footer;
+        color: @default-color;
+        background-color: @lightest-color;
+        padding: 1em;
     }
 }
 
@@ -47,7 +61,7 @@ body {
 h1 {
     font-size: 3em;
     padding-bottom: .5em;
-    margin: 1em 0;
+    margin: 0 0 1em;
 }
 
 h2 {
@@ -69,23 +83,43 @@ nav {
     > ul {
         > li {
             display: inline;
-            margin-right: 1em;
-
-            &:last-child {
-                margin-right: 0;
-            }
 
             a {
-                color: #ff0000;
+                color: @default-color;
+                display: inline-block;
+                font-size: 1.2em;
+                padding: .4em .4em;
+                margin: .2em 0 .2em .2em;
+                background-color: @light-color;
+                text-decoration: none;
+
                 &:visited {
-                    color: #ff0000;
+                    color: @default-color;
+                    background-color: @dark-color;
                 }
 
                 &:hover {
-                    color: #ffcc00;
+                    color: @light-color;
+                }
+
+                &.active {
+                    color: @light-color;
+                    background-color: @dark-color;
                 }
             }
-
         }
+    }
+}
+
+a {
+    color: @dark-color;
+
+    &:visited {
+        color: @dark-color;
+    }
+
+    &:hover {
+        color: @default-color;
+        background-color: @dark-color;
     }
 }

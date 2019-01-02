@@ -7,20 +7,20 @@
 
 @if (Model.DisplaySingleArticle && Model.SingleArticle != null)
 {
-    <a asp-page="./news" asp-route-slug=""> &lt;-- Back To List</a>
+    <a asp-page="/news" asp-route-slug=""> &gt;-- Back To List</a>
 
     <article>
         <header>
-            <h1>@Model.SingleArticle.Title</h1>
-            <h2>by @Model.SingleArticle.Author</h2>
-            <h3>Date Posted: @Model.SingleArticle.DatePosted</h3>
-            @Model.SingleArticle.Text
+            <h2>@Model.SingleArticle.Title</h2>
+            <p>by @Model.SingleArticle.Author</p>
+            <p>Date Posted: @Model.SingleArticle.DatePosted</p>
+            @Html.Raw(Model.SingleArticle.Text)
         </header>
     </article>
 }
 else if (Model.DisplaySingleArticle && Model.SingleArticle == null)
 {
-    <h1>The requested article cannot be found</h1>
+    <h2>The requested article cannot be found</h2>
 }
 else
 {
