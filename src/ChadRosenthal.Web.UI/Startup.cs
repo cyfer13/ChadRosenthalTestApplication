@@ -3,9 +3,13 @@ using Autofac.Extensions.DependencyInjection;
 using ChadRosenthal.Application.Domain;
 using ChadRosenthal.Application.Repository.EFCore;
 using ChadRosenthal.Web.UI.AppCode.Modules;
+using ChadRosenthal.Web.UI.AppCode.Rules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Rewrite;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -37,6 +41,9 @@ namespace ChadRosenthal.Web.UI
                 cfg.UseSqlServer(_configuration.GetConnectionString("ChadRosenthalConnectionString"));
             }
             );
+
+            services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
+
             services.AddMvc().AddRazorPagesOptions(options =>
             {
                 options.AllowAreas = true;
@@ -66,6 +73,10 @@ namespace ChadRosenthal.Web.UI
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
+
+            var options = new RewriteOptions().Add(new RedirectLowerCaseRule());
+            app.UseRewriter(options);
+
             app.UseHttpsRedirection();
             app.UseDefaultFiles();
             app.UseStaticFiles();
