@@ -1,16 +1,14 @@
 ﻿using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using ChadRosenthal.Application.Domain;
 using ChadRosenthal.Application.Repository.EFCore;
-using ChadRosenthal.Application.Repository.Static;
-using ChadRosenthal.Application.Services;
-using ChadRosenthal.Application.Services.Interfaces.Repository;
 using ChadRosenthal.Web.UI.AppCode.Modules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using System;
 
 namespace ChadRosenthal.Web.UI
@@ -28,10 +26,16 @@ namespace ChadRosenthal.Web.UI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<CardholderUser, IdentityRole>(cfg =>
+                {
+                    cfg.User.RequireUniqueEmail = true;
+                })
+                .AddEntityFrameworkStores<ChadRosenthalContext>();
+
             services.AddDbContext<ChadRosenthalContext>(cfg =>
             {
                 cfg.UseSqlServer(_configuration.GetConnectionString("ChadRosenthalConnectionString"));
-              }
+            }
             );
             services.AddMvc().AddRazorPagesOptions(options =>
             {
@@ -65,6 +69,7 @@ namespace ChadRosenthal.Web.UI
             app.UseHttpsRedirection();
             app.UseDefaultFiles();
             app.UseStaticFiles();
+            app.UseAuthentication();
 
 
             app.UseMvc();

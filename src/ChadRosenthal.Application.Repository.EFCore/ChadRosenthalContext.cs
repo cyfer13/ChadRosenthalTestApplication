@@ -1,10 +1,11 @@
 ﻿using ChadRosenthal.Application.Domain;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace ChadRosenthal.Application.Repository.EFCore
 {
-    public class ChadRosenthalContext : DbContext
+    public class ChadRosenthalContext : IdentityDbContext<CardholderUser>
     {
         public ChadRosenthalContext(DbContextOptions<ChadRosenthalContext> options) : base(options)
         {
