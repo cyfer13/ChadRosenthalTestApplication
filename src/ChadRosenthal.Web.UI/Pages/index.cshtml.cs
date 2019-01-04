@@ -22,7 +22,7 @@ namespace ChadRosenthal.Web.UI.Pages
 
         public void OnGet()
         {
-            _logger.LogError("index page loaded");
+            _logger.LogDebug("index page loaded");
             Message = "this is the message";
         }
     }
