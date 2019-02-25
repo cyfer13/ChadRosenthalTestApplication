@@ -1,0 +1,25 @@
+﻿@page
+@model ChadRosenthal.Web.UI.Pages.LoginModel
+@{
+}
+
+<h2>Login Page</h2>
+Message: @Model.Message
+<form method="post">
+    <div>
+        <label asp-for="LoginViewModel.UserName"></label>
+        <input asp-for="LoginViewModel.UserName" />
+    </div>
+
+    <div>
+        <label asp-for="LoginViewModel.Password"></label>
+        <input asp-for="LoginViewModel.Password" />
+    </div>
+    <div>
+        <input asp-for="LoginViewModel.RememberMe" type="checkbox" />
+        <label asp-for="LoginViewModel.RememberMe"></label>
+    </div>
+    <div>
+        <button type="submit">Login</button>
+    </div>
+</form>

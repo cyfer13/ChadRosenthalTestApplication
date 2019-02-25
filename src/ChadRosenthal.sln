@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.28315.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChadRosenthal.Web.UI", "ChadRosenthal.Web.UI\ChadRosenthal.Web.UI.csproj", "{137AF47B-35EE-461E-A25E-93F9FB2D0CC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChadRosenthal.Application.Services", "ChadRosenthal.Application.Services\ChadRosenthal.Application.Services.csproj", "{AA04BB63-8DCA-49E1-9532-C3057FFC8FE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChadRosenthal.Application.Services", "ChadRosenthal.Application.Services\ChadRosenthal.Application.Services.csproj", "{AA04BB63-8DCA-49E1-9532-C3057FFC8FE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChadRosenthal.Application.Domain", "ChadRosenthal.Application.Domain\ChadRosenthal.Application.Domain.csproj", "{26412E28-20C8-4158-8DF1-9ABF4DA90D26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChadRosenthal.Application.Domain", "ChadRosenthal.Application.Domain\ChadRosenthal.Application.Domain.csproj", "{26412E28-20C8-4158-8DF1-9ABF4DA90D26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChadRosenthal.Application.Repository.Static", "ChadRosenthal.Application.Repository.Static\ChadRosenthal.Application.Repository.Static.csproj", "{82DDE6F8-C44A-46F9-8309-A6C8668DE6C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChadRosenthal.Application.Repository.Static", "ChadRosenthal.Application.Repository.Static\ChadRosenthal.Application.Repository.Static.csproj", "{82DDE6F8-C44A-46F9-8309-A6C8668DE6C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChadRosenthal.Application.Repository.EFCore", "ChadRosenthal.Application.Repository.EFCore\ChadRosenthal.Application.Repository.EFCore.csproj", "{6D86CFFC-AB7E-4FE3-8B0B-2CEA353EED26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChadRosenthal.Application.Repository.EFCore", "ChadRosenthal.Application.Repository.EFCore\ChadRosenthal.Application.Repository.EFCore.csproj", "{6D86CFFC-AB7E-4FE3-8B0B-2CEA353EED26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,6 +4,7 @@ using ChadRosenthal.Application.Domain;
 using ChadRosenthal.Application.Repository.EFCore;
 using ChadRosenthal.Web.UI.AppCode.Modules;
 using ChadRosenthal.Web.UI.AppCode.Rules;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -36,6 +37,19 @@ namespace ChadRosenthal.Web.UI
                 })
                 .AddEntityFrameworkStores<ChadRosenthalContext>();
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = new PathString("/Account/AccessDenied");
+                options.Cookie.Name = "Cookie";
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(720);
+                options.LoginPath = new PathString("/login/");
+                options.ReturnUrlParameter = CookieAuthenticationDefaults.ReturnUrlParameter;
+                options.SlidingExpiration = true;
+            });
+
+
+
             services.AddDbContext<ChadRosenthalContext>(cfg =>
             {
                 cfg.UseSqlServer(_configuration.GetConnectionString("ChadRosenthalConnectionString"));
@@ -47,7 +61,7 @@ namespace ChadRosenthal.Web.UI
             services.AddMvc().AddRazorPagesOptions(options =>
             {
                 options.AllowAreas = true;
-
+                options.AllowMappingHeadRequestsToGetHandler = false;
                 options.Conventions.AuthorizeAreaFolder("account", "/");
 
             });
@@ -74,12 +88,13 @@ namespace ChadRosenthal.Web.UI
                 app.UseHsts();
             }
 
-            var options = new RewriteOptions().Add(new RedirectLowerCaseRule());
-            app.UseRewriter(options);
+            //var options = new RewriteOptions().Add(new RedirectLowerCaseRule());
+            //app.UseRewriter(options);
 
             app.UseHttpsRedirection();
-            app.UseDefaultFiles();
+            //app.UseDefaultFiles();
             app.UseStaticFiles();
+            app.UseCookiePolicy();
             app.UseAuthentication();
 
 

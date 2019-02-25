@@ -3,17 +3,17 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iis": {
-      "applicationUrl": "http://localhost/ChadRosenthal.Web.UI",
+      "applicationUrl": "https://chadrosenthal.com",
       "sslPort": 0
     },
     "iisExpress": {
-      "applicationUrl": "http://localhost:55995",
+      "applicationUrl": "https://localhost:44349",
       "sslPort": 44349
     }
   },
   "profiles": {
     "IIS Express": {
-      "commandName": "IISExpress",
+      "commandName": "IIS",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
