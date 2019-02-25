@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iis": {
-      "applicationUrl": "https://chadrosenthal.com",
+      "applicationUrl": "https://www.chadrosenthal.com",
       "sslPort": 0
     },
     "iisExpress": {
