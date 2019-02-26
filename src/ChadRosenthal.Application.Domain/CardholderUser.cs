@@ -9,5 +9,7 @@ namespace ChadRosenthal.Application.Domain
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+
+        public Guid CardholderId { get; set; }
     }
 }

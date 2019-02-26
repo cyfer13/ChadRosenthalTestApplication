@@ -31,11 +31,9 @@ namespace ChadRosenthal.Web.UI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            services.AddIdentity<CardholderUser, IdentityRole>(cfg =>
-                {
-                    cfg.User.RequireUniqueEmail = true;
-                })
-                .AddEntityFrameworkStores<ChadRosenthalContext>();
+            services.AddIdentity<CardholderUser, IdentityRole>(cfg => { cfg.User.RequireUniqueEmail = true; })
+                .AddEntityFrameworkStores<ChadRosenthalContext>()
+                .AddDefaultTokenProviders();
 
             services.ConfigureApplicationCookie(options =>
             {
@@ -88,15 +86,15 @@ namespace ChadRosenthal.Web.UI
                 app.UseHsts();
             }
 
-            //var options = new RewriteOptions().Add(new RedirectLowerCaseRule());
-            //app.UseRewriter(options);
+            var options = new RewriteOptions().Add(new RedirectLowerCaseRule());
+            app.UseRewriter(options);
 
             app.UseHttpsRedirection();
-            //app.UseDefaultFiles();
-            app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
 
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
             app.UseMvc();
         }
